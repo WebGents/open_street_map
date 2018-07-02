@@ -1,0 +1,49 @@
+AllCops:
+  Exclude:
+    - bin/*
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Layout/IndentationWidth:
+  Width: 2
+
+Layout/CaseIndentation:
+  EnforcedStyle: case
+  SupportedStyles:
+    - case
+    - end
+  IndentOneStep: true
+
+Layout/AlignHash:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/FileName:
+  Enabled: false
+
+Style/FormatStringToken:
+  EnforcedStyle: template
+
+Style/ExpandPathArguments:
+  Enabled: false

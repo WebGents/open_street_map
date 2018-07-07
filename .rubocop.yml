@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - bin/*
+  TargetRubyVersion: 2.5.0
 
 Metrics/AbcSize:
   Enabled: false
@@ -39,11 +40,14 @@ Layout/AlignHash:
 Style/GuardClause:
   Enabled: false
 
-Style/FileName:
+Naming:
   Enabled: false
 
 Style/FormatStringToken:
   EnforcedStyle: template
 
 Style/ExpandPathArguments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false

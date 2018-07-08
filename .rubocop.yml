@@ -51,3 +51,7 @@ Style/ExpandPathArguments:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+

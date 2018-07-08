@@ -1,6 +1,6 @@
 # OpenStreetMap
 
-Integration of OpenStreetMap api from Nominatim
+Integration of OpenStreetMap api from [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) 
 
 ## Installation
 

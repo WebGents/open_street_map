@@ -1,3 +1,3 @@
 module OpenStreetMap
-  VERSION = '0.3.0'.freeze
+  VERSION = '1.0'.freeze
 end

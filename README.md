@@ -1,8 +1,6 @@
 # OpenStreetMap
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/open_street_map`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Integration of OpenStreetMap api from Nominatim
 
 ## Installation
 
@@ -22,22 +20,107 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Create OpenStreetMap client object
 
-## Development
+```ruby
+  client = OpenStreetMap::Client.new
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+### Search
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Request for search objects is #search.
+
+```ruby
+  client.search(q: '135 pilkington avenue, birmingham', format: 'json', addressdetails: '1')
+```
+    q - query
+    format - one of the [xml|json|jsonv2]
+    viewbox - The preferred area to find search results like <x1>,<y1>,<x2>,<y2>
+    bounded - Restrict the results to only items contained with the viewbox, one of the [0|1]
+    addressdetails - Include a breakdown of the address into elements, one of the [0|1]
+    exclude_place_ids - If you do not want certain openstreetmap objects to appear in the search result, give a comma separated list of the place_id's you want to skip
+    limit - Limit the number of returned results, integer
+    extratags - Include additional information in the result if available, one of the [0|1]
+    namedetails - Include a list of alternative names in the results, one of the [0|1]
+
+#### Responces
+
+```ruby
+  [
+    {
+      "place_id":"91015286",
+      "licence":"Data © OpenStreetMap contributors, ODbL 1.0. https:\/\/osm.org\/copyright",
+      "osm_type":"way",
+      "osm_id":"90394480",
+      "boundingbox":["52.5487473","52.5488481","-1.816513","-1.8163464"],
+      "lat":"52.5487921",
+      "lon":"-1.8164308339635",
+      "display_name":"135, Pilkington Avenue, Sutton Coldfield, Бирмингем, West Midlands Combined Authority, Западный Мидленд, Англия, B72 1LH, Великобритания",
+      "class":"building",
+      "type":"yes",
+      "importance":0.31025,
+      "address": {
+        "house_number":"135",
+        "road":"Pilkington Avenue",
+        "town":"Sutton Coldfield",
+        "city":"Бирмингем",
+        "county":"West Midlands Combined Authority",
+        "state_district":"Западный Мидленд",
+        "state":"Англия",
+        "postcode":"B72 1LH",
+        "country":"Великобритания",
+        "country_code":"gb"
+      }
+    }
+  ]
+```
+
+### Reverse
+
+Request for objects by coordinates is #reverse.
+
+```ruby
+  client.reverse(format: 'json', lat: '52.594417', lon: '39.493115')
+```
+    format - one of the [xml|json|jsonv2]
+    zoom - Level of detail required where 0 is country and 18 is house/building, one of the [0-18]
+    addressdetails - Include a breakdown of the address into elements, one of the [0|1]
+    lat - Latitude, required
+    lon - Longitude, required
+    extratags - Include additional information in the result if available, one of the [0|1]
+    namedetails - Include a list of alternative names in the results, one of the [0|1]
+
+#### Responces
+
+```ruby
+  {
+    "place_id":"150727169",
+    "licence":"Data © OpenStreetMap contributors, ODbL 1.0. https:\/\/osm.org\/copyright",
+    "osm_type":"way",
+    "osm_id":"367091730",
+    "lat":"52.5944624",
+    "lon":"39.4931348495468",
+    "display_name":"4, улица Хренникова, микрорайон Елецкий, Сырский рудник, Советский округ, Липецк, городской округ Липецк, Липецкая область, Центральный федеральный округ, 398000, РФ",
+    "address":{
+      "house_number":"4",
+      "road":"улица Хренникова",
+      "residential":"микрорайон Елецкий",
+      "suburb":"городской округ Липецк",
+      "city_district":"Советский округ",
+      "city":"Липецк",
+      "state":"Липецкая область",
+      "postcode":"398000",
+      "country":"РФ",
+      "country_code":"ru"
+    },
+    "boundingbox":["52.5943024","52.5946223","39.4929211","39.4933486"]
+  }
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/WebGents/open_street_map. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/WebGents/open_street_map.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the OpenStreetMap project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/open_street_map/blob/master/CODE_OF_CONDUCT.md).

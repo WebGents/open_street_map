@@ -19,7 +19,7 @@ module OpenStreetMap
       end
 
       def valid_reverse_args(args)
-        args.slice(:format, :lat, :lon, :zoom, :addressdetails)
+        args.slice(:format, :lat, :lon, :zoom, :addressdetails, :extratags, :namedetails)
       end
     end
   end

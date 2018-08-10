@@ -24,7 +24,7 @@ module OpenStreetMap
       end
 
       def valid_search_args(args)
-        args.slice(:format, :addressdetails, :extratags, :namedetails, :viewbox, :bounded, :exclude_place_ids, :limit, :accept_language)
+        args.slice(:format, :addressdetails, :extratags, :namedetails, :viewbox, :bounded, :exclude_place_ids, :limit, :accept_language, :email)
       end
     end
   end

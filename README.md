@@ -43,6 +43,7 @@ Request for search objects is #search.
     extratags - Include additional information in the result if available, one of the [0|1]
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
+    email - If you are making large numbers of request please include a valid email address
 
 #### Responces
 
@@ -91,6 +92,7 @@ Request for objects by coordinates is #reverse.
     extratags - Include additional information in the result if available, one of the [0|1]
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
+    email - If you are making large numbers of request please include a valid email address
 
 #### Responces
 

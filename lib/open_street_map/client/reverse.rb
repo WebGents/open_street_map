@@ -3,7 +3,7 @@ module OpenStreetMap
     # Reverse geocoding generates an address from a latitude and longitude
     module Reverse
       def reverse(args = {})
-        response = RestClient.get("#{BASE_URI}reverse?#{reverse_args_to_url(args)}")
+        response = RestClient.get("#{BASE_URI}reverse?#{reverse_args_to_url(args)}", user_agent: args[:user_agent] || DEFAULT_USER_AGENT)
         args[:format] == 'xml' ? response.body : JSON.parse(response.body)
       rescue
         { 'errors' => 'Bad request' }

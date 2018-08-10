@@ -44,6 +44,7 @@ Request for search objects is #search.
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
     email - If you are making large numbers of request please include a valid email address
+    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem
 
 #### Responces
 
@@ -93,6 +94,7 @@ Request for objects by coordinates is #reverse.
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
     email - If you are making large numbers of request please include a valid email address
+    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem
 
 #### Responces
 

@@ -10,6 +10,7 @@ module OpenStreetMap
     include OpenStreetMap::Client::Search
 
     BASE_URI = 'https://nominatim.openstreetmap.org/'.freeze
+    DEFAULT_USER_AGENT = 'webgents/open_street_map_gem'.freeze
 
     def initialize(args = {}); end
   end

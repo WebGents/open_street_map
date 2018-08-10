@@ -1,6 +1,6 @@
 # OpenStreetMap
 
-Integration of OpenStreetMap api from [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) 
+Integration of OpenStreetMap api from [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim)
 
 ## Installation
 
@@ -31,7 +31,7 @@ Or install it yourself as:
 Request for search objects is #search.
 
 ```ruby
-  client.search(q: '135 pilkington avenue, birmingham', format: 'json', addressdetails: '1')
+  client.search(q: '135 pilkington avenue, birmingham', format: 'json', addressdetails: '1', accept_language: 'ru')
 ```
     q - query
     format - one of the [xml|json|jsonv2]
@@ -44,7 +44,8 @@ Request for search objects is #search.
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
     email - If you are making large numbers of request please include a valid email address
-    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem
+    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem_random
+    hostname - allow overwriting the host name for users who have their own Nominatim installation, default - https://nominatim.openstreetmap.org/
 
 #### Responces
 
@@ -83,7 +84,7 @@ Request for search objects is #search.
 Request for objects by coordinates is #reverse.
 
 ```ruby
-  client.reverse(format: 'json', lat: '52.594417', lon: '39.493115')
+  client.reverse(format: 'json', lat: '52.594417', lon: '39.493115', accept_language: 'ru')
 ```
     format - one of the [xml|json|jsonv2]
     zoom - Level of detail required where 0 is country and 18 is house/building, one of the [0-18]
@@ -94,7 +95,8 @@ Request for objects by coordinates is #reverse.
     namedetails - Include a list of alternative names in the results, one of the [0|1]
     accept_language - Preferred language order for showing search results, default - en
     email - If you are making large numbers of request please include a valid email address
-    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem
+    user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem_random
+    hostname - allow overwriting the host name for users who have their own Nominatim installation, default - https://nominatim.openstreetmap.org/
 
 #### Responces
 
@@ -130,3 +132,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/WebGen
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+## Disclaimer
+
+Use this package at your own peril and risk, the author tried to simplify the use of [Nominatim service](https://wiki.openstreetmap.org/wiki/Nominatim) for integration into Ruby on Rails web applications.

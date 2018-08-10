@@ -3,7 +3,8 @@ module OpenStreetMap
     # Search objects by query
     module Search
       def search(args = {})
-        response = RestClient.get("#{BASE_URI}search?#{search_arg(args[:q])}&#{search_args_to_url(args)}", user_agent: args[:user_agent] || DEFAULT_USER_AGENT)
+        response = RestClient.get("#{args[:hostname] || BASE_URI}search?#{search_arg(args[:q])}&#{search_args_to_url(args)}", user_agent: args[:user_agent] || DEFAULT_USER_AGENT)
+        sleep(REQUEST_TIMEOUT)
         args[:format] == 'xml' ? response.body : JSON.parse(response.body)
       rescue
         { 'errors' => 'Bad request' }

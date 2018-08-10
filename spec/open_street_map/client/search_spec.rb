@@ -18,12 +18,14 @@ RSpec.describe OpenStreetMap::Client::Search do
         expect(response[0]['address']).to_not eq nil
         expect(response[0]['lat']).to_not eq nil
         expect(response[0]['lon']).to_not eq nil
+        sleep(1)
       end
 
       it 'for xml format returns object data' do
         response = client.search(q: '135 pilkington avenue, birmingham', format: 'xml', addressdetails: '1')
 
         expect(response.is_a?(String)).to eq true
+        sleep(1)
       end
     end
   end

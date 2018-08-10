@@ -13,13 +13,14 @@ module OpenStreetMap
 
       def reverse_args_to_url(args, result = [])
         valid_reverse_args(args).each do |key, value|
+          key = 'accept-language' if key == :accept_language
           result << "#{key}=#{value}"
         end
         result.join('&')
       end
 
       def valid_reverse_args(args)
-        args.slice(:format, :lat, :lon, :zoom, :addressdetails, :extratags, :namedetails)
+        args.slice(:format, :lat, :lon, :zoom, :addressdetails, :extratags, :namedetails, :accept_language)
       end
     end
   end

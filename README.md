@@ -42,6 +42,7 @@ Request for search objects is #search.
     limit - Limit the number of returned results, integer
     extratags - Include additional information in the result if available, one of the [0|1]
     namedetails - Include a list of alternative names in the results, one of the [0|1]
+    accept_language - Preferred language order for showing search results, default - en
 
 #### Responces
 
@@ -89,6 +90,7 @@ Request for objects by coordinates is #reverse.
     lon - Longitude, required
     extratags - Include additional information in the result if available, one of the [0|1]
     namedetails - Include a list of alternative names in the results, one of the [0|1]
+    accept_language - Preferred language order for showing search results, default - en
 
 #### Responces
 

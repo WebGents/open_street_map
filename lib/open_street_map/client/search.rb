@@ -17,13 +17,14 @@ module OpenStreetMap
 
       def search_args_to_url(args, result = [])
         valid_search_args(args).each do |key, value|
+          key = 'accept-language' if key == :accept_language
           result << "#{key}=#{value}"
         end
         result.join('&')
       end
 
       def valid_search_args(args)
-        args.slice(:format, :addressdetails, :extratags, :namedetails, :viewbox, :bounded, :exclude_place_ids, :limit)
+        args.slice(:format, :addressdetails, :extratags, :namedetails, :viewbox, :bounded, :exclude_place_ids, :limit, :accept_language)
       end
     end
   end

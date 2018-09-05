@@ -47,7 +47,7 @@ Request for search objects is #search.
     user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem_random
     hostname - allow overwriting the host name for users who have their own Nominatim installation, default - https://nominatim.openstreetmap.org/
 
-#### Responces
+#### Responses
 
 ```ruby
   [
@@ -98,7 +98,7 @@ Request for objects by coordinates is #reverse.
     user_agent - User-Agent identifying the application, default - webgents/open_street_map_gem_random
     hostname - allow overwriting the host name for users who have their own Nominatim installation, default - https://nominatim.openstreetmap.org/
 
-#### Responces
+#### Responses
 
 ```ruby
   {

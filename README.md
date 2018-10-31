@@ -34,7 +34,7 @@ Request for search objects is #search.
   client.search(q: '135 pilkington avenue, birmingham', format: 'json', addressdetails: '1', accept_language: 'ru')
 ```
     q - query
-    format - one of the [xml|json|jsonv2]
+    format - one of the [xml|json|jsonv2], default - xml
     viewbox - The preferred area to find search results like <x1>,<y1>,<x2>,<y2>
     bounded - Restrict the results to only items contained with the viewbox, one of the [0|1]
     addressdetails - Include a breakdown of the address into elements, one of the [0|1]
@@ -86,7 +86,7 @@ Request for objects by coordinates is #reverse.
 ```ruby
   client.reverse(format: 'json', lat: '52.594417', lon: '39.493115', accept_language: 'ru')
 ```
-    format - one of the [xml|json|jsonv2]
+    format - one of the [xml|json|jsonv2], default - xml
     zoom - Level of detail required where 0 is country and 18 is house/building, one of the [0-18]
     addressdetails - Include a breakdown of the address into elements, one of the [0|1]
     lat - Latitude, required

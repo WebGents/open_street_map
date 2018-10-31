@@ -2,6 +2,13 @@
 
 Integration of OpenStreetMap api from [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim)
 
+## Prerequisites
+
+This project requires:
+
+* Ruby >= 2.3.1, but can work with earlier versions
+* RestClient >= 2.0.2
+
 ## Installation
 
 Add this line to your application's Gemfile:

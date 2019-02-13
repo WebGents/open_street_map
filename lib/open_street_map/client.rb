@@ -1,10 +1,10 @@
-require 'rest-client'
-require 'json'
+require 'httparty'
 require_relative 'client/request'
 
 module OpenStreetMap
   # Client requests
   class Client
+    include HTTParty
     include OpenStreetMap::Client::Request
 
     BASE_URI = 'https://nominatim.openstreetmap.org/'.freeze

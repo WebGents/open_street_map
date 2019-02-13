@@ -21,9 +21,10 @@ RSpec.describe OpenStreetMap::Client do
       end
 
       it 'for xml format returns object data' do
-        response = client.search(q: '135 pilkington avenue, birmingham', format: 'xml', addressdetails: '1')
+        response = client.search(q: '135 pilkington avenue, birmingham', format: 'xml', addressdetails: '1', accept_language: 'fr')
 
-        expect(response.is_a?(String)).to eq true
+        expect(response.is_a?(Hash)).to eq true
+        expect(response['searchresults']).to_not eq nil
       end
     end
   end
@@ -34,7 +35,7 @@ RSpec.describe OpenStreetMap::Client do
     context 'for bad request' do
       context 'for bad params' do
         it 'returns hash with error message' do
-          expect(client.reverse).to eq('errors' => 'Bad request')
+          expect(client.reverse).to eq('error' => { 'code' => '400', 'message' => 'Need coordinates or OSM object to lookup.' })
         end
       end
     end
@@ -51,7 +52,8 @@ RSpec.describe OpenStreetMap::Client do
       it 'for xml format returns address data' do
         response = client.reverse(format: 'xml', lat: rand(47.0..53.0).round(6).to_s, lon: rand(6.0..14.0).round(6).to_s)
 
-        expect(response.is_a?(String)).to eq true
+        expect(response.is_a?(Hash)).to eq true
+        expect(response['reversegeocode']).to_not eq nil
       end
     end
   end

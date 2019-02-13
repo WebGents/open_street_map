@@ -7,7 +7,6 @@ module OpenStreetMap
       def call(type, args)
         url = generate_url(type, args)
         response = fetch(url, args)
-        sleep(REQUEST_TIMEOUT)
         parse(response, args[:format])
       rescue
         { 'errors' => 'Bad request' }

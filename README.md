@@ -7,7 +7,7 @@ Integration of OpenStreetMap api from [Nominatim](https://wiki.openstreetmap.org
 This project requires:
 
 * Ruby >= 2.3.1, but can work with earlier versions
-* RestClient >= 2.0.2
+* HTTParty >= 0.16
 
 ## Installation
 

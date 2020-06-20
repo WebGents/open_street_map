@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
     - bin/*
-  TargetRubyVersion: 2.3.0
+  TargetRubyVersion: 2.5.0
 
 Metrics/AbcSize:
   Enabled: false
@@ -54,4 +54,3 @@ Style/FrozenStringLiteralComment:
 
 Style/RescueStandardError:
   Enabled: false
-

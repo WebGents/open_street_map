@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module OpenStreetMap
   class Client
-    # methods for request
     module Request
       private
 
@@ -13,7 +14,7 @@ module OpenStreetMap
 
       # generate body from args
       def generate_body(type, args)
-        args['accept-language'.to_sym] = args[:accept_language] if args.key?(:accept_language)
+        args[:'accept-language'] = args[:accept_language] if args.key?(:accept_language)
         args.select { |key, _| valid_args(type).include?(key) }
       end
 

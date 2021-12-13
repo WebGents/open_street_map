@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe OpenStreetMap::Client do
   describe '.search' do
     let(:client) { OpenStreetMap::Client.new }

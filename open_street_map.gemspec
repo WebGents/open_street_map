@@ -7,6 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = OpenStreetMap::VERSION
   spec.authors = ['JungleCoders', 'Anton Bogdanov']
   spec.email = ['kortirso@gmail.com']
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.summary = 'OpenStrretMap API'
   spec.description = 'Integration with OpenStreetMap API'
@@ -22,9 +23,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.5.1'
 
-  spec.add_development_dependency 'bundler', '~> 1.15'
+  spec.add_development_dependency 'bundler', '>= 2.2.33'
   spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.57.2'
+  spec.add_development_dependency 'rspec', '~> 3.10'
+  spec.add_development_dependency 'rubocop', '~> 1.23'
   spec.add_dependency 'httparty', '~> 0.17'
 end

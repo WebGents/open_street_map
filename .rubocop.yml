@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - bin/*
+  NewCops: enable
   TargetRubyVersion: 2.5.0
 
 Metrics/AbcSize:
@@ -12,7 +13,7 @@ Metrics/BlockLength:
 Metrics/ClassLength:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
 
 Metrics/MethodLength:
@@ -34,8 +35,9 @@ Layout/CaseIndentation:
     - end
   IndentOneStep: true
 
-Layout/AlignHash:
-  Enabled: false
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
 
 Style/GuardClause:
   Enabled: false
@@ -53,4 +55,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/RescueStandardError:
+  Enabled: false
+
+Style/Documentation:
   Enabled: false

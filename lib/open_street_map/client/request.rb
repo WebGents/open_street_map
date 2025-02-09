@@ -22,7 +22,7 @@ module OpenStreetMap
       def valid_args(type)
         case type
           when 'search' then %i[q format addressdetails extratags namedetails viewbox bounded exclude_place_ids limit accept-language email]
-          when 'reverse' then %i[format lat lon zoom addressdetails extratags namedetails accept-language email]
+          when 'reverse' then %i[format lat lon zoom addressdetails extratags namedetails accept-language email polygon_geojson polygon_kml polygon_svg polygon_text polygon_threshold debug]
           else []
         end
       end

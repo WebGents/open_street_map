@@ -37,7 +37,7 @@ RSpec.describe OpenStreetMap::Client do
     context 'for bad request' do
       context 'for bad params' do
         it 'returns hash with error message' do
-          expect(client.reverse).to eq('error' => { 'code' => '400', 'message' => 'Need coordinates or OSM object to lookup.' })
+          expect(client.reverse).to eq('error' => { 'code' => '400', 'message' => 'Parameter \'lon\' missing.' })
         end
       end
     end

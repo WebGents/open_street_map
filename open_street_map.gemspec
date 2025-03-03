@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'open_street_map/version'
@@ -7,7 +9,6 @@ Gem::Specification.new do |spec|
   spec.version = OpenStreetMap::VERSION
   spec.authors = ['JungleCoders', 'Anton Bogdanov']
   spec.email = ['kortirso@gmail.com']
-  spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.summary = 'OpenStrretMap API'
   spec.description = 'Integration with OpenStreetMap API'
